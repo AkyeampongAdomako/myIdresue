@@ -1,0 +1,26 @@
+     const chatroom = req.params.chatroom_id;
+      const sender = req.params.user_id;
+      const receiver = req.params.receiver;
+      const checkchat = await chatModel.findById({ _id: chatroom });
+
+      if (checkchat) {
+        const data = new MessageModel({
+          chat: checkchat._id,
+          sender: sender,
+          receiver: receiver,
+          messsages: req.body.message,
+        });
+        const savedmessage = await data.save();
+        await chatModel.findByIdAndUpdate(
+          { _id: chatroom },
+          {
+            $push: {
+              messsages: savedmessage._id,
+            },
+          },
+          { new: true, useFindAndModify: false }
+        );
+        res.status(200).json(savedmessage);
+      } else {
+        res.status(404).json({ msg: "not sent" });
+      }
