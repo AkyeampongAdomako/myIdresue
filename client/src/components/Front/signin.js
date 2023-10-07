@@ -122,7 +122,7 @@ const SignInUser = () => {
       <div className="footer">
         <div className="frontitemhover">
           <p>
-            Powered by Badu Tech. All rights reserved
+            Handcrafted by Akyeampong Adomako. All rights reserved
             <span style={{ color: "green" }}> @ </span> 2023
           </p>
         </div>

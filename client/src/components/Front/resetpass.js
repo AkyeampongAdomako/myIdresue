@@ -100,7 +100,7 @@ const LoginReset = () => {
       <div className="footer">
         <div className="frontitemhover">
           <p>
-             Powered by Badu Tech. All rights reserved<span style={{ color: "green" }}> @ </span>{" "}
+             Handcrafted by Akyeampong Adomako. All rights reserved<span style={{ color: "green" }}> @ </span>{" "}
             2023
           </p>
         </div>
